@@ -1,10 +1,10 @@
 package ru.netology.delivery.test;
 
-import entities.RegistrationInfo;
+import ru.netology.delivery.entities.RegistrationInfo;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
-import utils.DataGenerator;
+import ru.netology.delivery.utils.DataGenerator;
 
 import java.time.Duration;
 
@@ -19,16 +19,10 @@ public class DeviveryTest {
     }
 
     @Test
-    @DisplayName("Should successful plan and replan meeting")
     void shouldSuccessfulPlanAndReplanOneMeeting() {
         RegistrationInfo info = DataGenerator.Registration.generateUser("ru");
         var daysToAddForFirstMeeting = 4;
         var firstMeetingDate = DataGenerator.generateDate(daysToAddForFirstMeeting);
-        // TODO: добавить логику теста в рамках которого будет выполнено планирование и перепланирование встречи.
-        // Для заполнения полей формы можно использовать пользователя validUser и строки с датами в переменных
-        // firstMeetingDate и secondMeetingDate. Можно также вызывать методы generateCity(locale),
-        // generateName(locale), generatePhone(locale) для генерации и получения в тесте соответственно города,
-        // имени и номера телефона без создания пользователя в методе generateUser(String locale) в датагенераторе
 
         $("[data-test-id=\"city\"] input").setValue(info.getCity());
         $("[data-test-id=\"date\"] input").doubleClick();
@@ -45,7 +39,6 @@ public class DeviveryTest {
     }
 
     @Test
-    @DisplayName("Should successful plan and replan meeting")
     void shouldSuccessfulPlanAndReplanTwoMeeting() {
         RegistrationInfo info = DataGenerator.Registration.generateUser("ru");
 
@@ -56,12 +49,6 @@ public class DeviveryTest {
         var validUser = info.getName();
         var validPhone = info.getPhone();
         var validCity = info.getCity();
-
-        // TODO: добавить логику теста в рамках которого будет выполнено планирование и перепланирование встречи.
-        // Для заполнения полей формы можно использовать пользователя validUser и строки с датами в переменных
-        // firstMeetingDate и secondMeetingDate. Можно также вызывать методы generateCity(locale),
-        // generateName(locale), generatePhone(locale) для генерации и получения в тесте соответственно города,
-        // имени и номера телефона без создания пользователя в методе generateUser(String locale) в датагенераторе
 
         $("[data-test-id=\"city\"] input").setValue(validCity);
         $("[data-test-id=\"date\"] input").doubleClick();
