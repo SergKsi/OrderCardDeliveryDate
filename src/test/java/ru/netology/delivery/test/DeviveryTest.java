@@ -18,6 +18,7 @@ public class DeviveryTest {
         open("http://localhost:9999");
     }
 
+    // планировка
     @Test
     void shouldSuccessfulPlanAndReplanOneMeeting() {
         RegistrationInfo info = DataGenerator.Registration.generateUser("ru");
@@ -38,6 +39,7 @@ public class DeviveryTest {
                 .shouldBe(visible);
     }
 
+    // перепланировка
     @Test
     void shouldSuccessfulPlanAndReplanTwoMeeting() {
         RegistrationInfo info = DataGenerator.Registration.generateUser("ru");
